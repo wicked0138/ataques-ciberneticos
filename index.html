@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO essencial -->
+  <title>Ataques Cibernéticos e Como Evitá-los | Guia de Segurança Digital</title>
+  <meta name="description" content="Entenda o que são ataques cibernéticos, como acontecem na prática, veja casos reais no Brasil e no mundo e aprenda um checklist para se proteger de phishing, ransomware e golpes.">
+  <meta name="keywords" content="ataques cibernéticos, segurança digital, phishing, ransomware, engenharia social, malware, como se proteger, golpes online, cibersegurança, denúncia de crimes cibernéticos">
+  <meta name="author" content="Guia Cyber Seguro">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f172a">
+  <!-- TROQUE pela URL final do seu site (veja o README.md) -->
+  <link rel="canonical" href="https://SEU-USUARIO.github.io/ataques-ciberneticos/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Guia Cyber Seguro">
+  <meta property="og:title" content="Ataques Cibernéticos e Como Evitá-los">
+  <meta property="og:description" content="Casos reais, tipos de ameaça e um checklist interativo para proteger você, sua família e sua empresa.">
+  <meta property="og:url" content="https://SEU-USUARIO.github.io/ataques-ciberneticos/">
+  <meta property="og:image" content="https://SEU-USUARIO.github.io/ataques-ciberneticos/og-image.png">
+  <meta property="og:image:alt" content="Escudo com cadeado e o título Ataques Cibernéticos e como evitá-los">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ataques Cibernéticos e Como Evitá-los">
+  <meta name="twitter:description" content="Casos reais, tipos de ameaça e um checklist interativo para se proteger no mundo digital.">
+  <meta name="twitter:image" content="https://SEU-USUARIO.github.io/ataques-ciberneticos/og-image.png">
+  <meta name="twitter:image:alt" content="Escudo com cadeado e o título Ataques Cibernéticos e como evitá-los">
+
+  <!-- Favicon (SVG inline) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4l24 9v18c0 14-10 25-24 29C18 56 8 45 8 31V13z' fill='%230f172a' stroke='%2322c55e' stroke-width='4'/%3E%3Crect x='22' y='29' width='20' height='16' rx='3' fill='%2322c55e'/%3E%3Cpath d='M26 29v-5a6 6 0 0112 0v5' fill='none' stroke='%2322c55e' stroke-width='4'/%3E%3C/svg%3E">
+
+  <!-- Fontes, ícones e Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            base: '#0f172a',
+            neon: '#22c55e',
+            cyan: { cyber: '#06b6d4' }
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Dados estruturados (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ataques Cibernéticos e Como Evitá-los",
+    "description": "Guia didático sobre ataques cibernéticos, casos reais e boas práticas de segurança digital.",
+    "inLanguage": "pt-BR",
+    "image": "https://SEU-USUARIO.github.io/ataques-ciberneticos/og-image.png",
+    "mainEntityOfPage": "https://SEU-USUARIO.github.io/ataques-ciberneticos/",
+    "author": { "@type": "Organization", "name": "Guia Cyber Seguro" },
+    "publisher": { "@type": "Organization", "name": "Guia Cyber Seguro" }
+  }
+  </script>
+</head>
+
+<body class="bg-base text-slate-200 font-sans antialiased">
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ============ CABEÇALHO FIXO ============ -->
+  <header id="topo" class="fixed top-0 inset-x-0 z-50 header-blur border-b border-white/10">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between" aria-label="Navegação principal">
+      <a href="#inicio" class="flex items-center gap-2 font-extrabold text-white text-lg">
+        <i class="fa-solid fa-shield-halved text-neon" aria-hidden="true"></i>
+        Cyber<span class="text-neon">Seguro</span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-7 text-sm font-medium">
+        <li><a class="nav-link" href="#o-que-sao">O que são</a></li>
+        <li><a class="nav-link" href="#como-funcionam">Na prática</a></li>
+        <li><a class="nav-link" href="#ameacas">Ameaças</a></li>
+        <li><a class="nav-link" href="#casos">Casos reais</a></li>
+        <li><a class="nav-link" href="#protecao">Como se proteger</a></li>
+        <li><a class="nav-link" href="#denuncia">Denúncia</a></li>
+      </ul>
+
+      <button id="menu-btn" class="lg:hidden w-11 h-11 grid place-items-center rounded-lg border border-white/15 text-white"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-base/95">
+      <ul class="px-4 py-3 flex flex-col text-base font-medium">
+        <li><a class="mobile-link" href="#o-que-sao">O que são</a></li>
+        <li><a class="mobile-link" href="#como-funcionam">Na prática</a></li>
+        <li><a class="mobile-link" href="#ameacas">Ameaças</a></li>
+        <li><a class="mobile-link" href="#casos">Casos reais</a></li>
+        <li><a class="mobile-link" href="#protecao">Como se proteger</a></li>
+        <li><a class="mobile-link" href="#denuncia">Denúncia</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ HERO ============ -->
+    <section id="inicio" class="hero-bg pt-32 pb-20 sm:pt-40 sm:pb-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-cyan-cyber border border-cyan-cyber/40 rounded-full px-3 py-1 mb-6">
+            <i class="fa-solid fa-circle text-neon text-[8px]" aria-hidden="true"></i> Alerta de segurança digital
+          </p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+            Proteja-se no <span class="grad-text">Mundo Digital</span>
+          </h1>
+          <p class="mt-6 text-lg text-slate-300 max-w-xl">
+            Ataques cibernéticos já atingem portos, governos, empresas e famílias. Entenda como eles funcionam, veja casos reais e aprenda hábitos simples que bloqueiam a maioria dos golpes.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="guia-seguranca.pdf" download class="btn-primary">
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Baixar Guia de Segurança
+            </a>
+            <a href="#casos" class="btn-ghost">
+              <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Ver casos reais
+            </a>
+          </div>
+        </div>
+
+        <figure class="reveal relative">
+          <div class="absolute -inset-4 bg-gradient-to-tr from-neon/20 to-cyan-cyber/20 blur-2xl rounded-3xl" aria-hidden="true"></div>
+          <svg viewBox="0 0 900 700" role="img" aria-labelledby="hero-svg-title" class="relative rounded-2xl border border-white/10 w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+            <title id="hero-svg-title">Escudo com cadeado protegendo uma tela com alerta de tentativa de phishing</title>
+            <defs>
+              <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22c55e"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+              <pattern id="hgrid" width="45" height="45" patternUnits="userSpaceOnUse"><path d="M45 0H0V45" fill="none" stroke="#22c55e" stroke-opacity=".08"/></pattern>
+              <radialGradient id="hglow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#22c55e" stop-opacity=".35"/><stop offset="1" stop-color="#22c55e" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="900" height="700" fill="#0b1224"/>
+            <rect width="900" height="700" fill="url(#hgrid)"/>
+            <circle cx="450" cy="360" r="300" fill="url(#hglow)"/>
+
+            <!-- janela de terminal -->
+            <g>
+              <rect x="50" y="60" width="330" height="190" rx="16" fill="#111c36" stroke="#2a3b66"/>
+              <circle cx="78" cy="88" r="6" fill="#ef4444"/><circle cx="98" cy="88" r="6" fill="#eab308"/><circle cx="118" cy="88" r="6" fill="#22c55e"/>
+              <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="17">
+                <text x="76" y="132" fill="#22c55e">$ scan --rede</text>
+                <text x="76" y="162" fill="#94a3b8">verificando acessos...</text>
+                <text x="76" y="192" fill="#06b6d4">ameaça bloqueada</text>
+                <text x="76" y="222" fill="#22c55e">sistema seguro ✓</text>
+              </g>
+            </g>
+
+            <!-- cartão de phishing -->
+            <g>
+              <rect x="540" y="440" width="320" height="190" rx="16" fill="#111c36" stroke="#2a3b66"/>
+              <rect x="568" y="468" width="46" height="46" rx="12" fill="#3f1d1d" stroke="#ef4444"/>
+              <path d="M591 477l17 30h-34z" fill="#ef4444"/><rect x="589.5" y="486" width="3" height="11" fill="#fff"/><circle cx="591" cy="502" r="2" fill="#fff"/>
+              <text x="630" y="486" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="700" fill="#fff">Possível golpe</text>
+              <text x="630" y="510" font-family="Inter,system-ui,sans-serif" font-size="14" fill="#94a3b8">link suspeito detectado</text>
+              <rect x="568" y="540" width="264" height="12" rx="6" fill="#1e2d52"/>
+              <rect x="568" y="564" width="200" height="12" rx="6" fill="#1e2d52"/>
+              <rect x="568" y="588" width="110" height="26" rx="13" fill="#ef4444"/>
+              <text x="623" y="606" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#fff">BLOQUEAR</text>
+            </g>
+
+            <!-- escudo central -->
+            <g transform="translate(450 345)">
+              <path d="M0-190L150-135V-5C150 95 85 165 0 195-85 165-150 95-150-5V-135Z" fill="#0f1c38" stroke="url(#hg)" stroke-width="10" stroke-linejoin="round"/>
+              <path d="M0-150L118-108V-5C118 72 70 128 0 154-70 128-118 72-118-5V-108Z" fill="none" stroke="#22c55e" stroke-opacity=".25" stroke-width="3"/>
+              <rect x="-52" y="-28" width="104" height="86" rx="16" fill="url(#hg)"/>
+              <path d="M-30-28v-30a30 30 0 0 1 60 0v30" fill="none" stroke="url(#hg)" stroke-width="14" stroke-linecap="round"/>
+              <circle cx="0" cy="12" r="11" fill="#0f1c38"/><rect x="-4.5" y="16" width="9" height="26" rx="4" fill="#0f1c38"/>
+            </g>
+
+            <!-- nós de rede -->
+            <g stroke="#06b6d4" stroke-opacity=".5" stroke-width="2" fill="none">
+              <path d="M380 200L330 300M520 160L640 250M300 520L200 600M640 330L760 390"/>
+            </g>
+            <g fill="#06b6d4"><circle cx="330" cy="300" r="7"/><circle cx="640" cy="250" r="7"/><circle cx="200" cy="600" r="7"/><circle cx="760" cy="390" r="7"/></g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ O QUE SÃO ============ -->
+    <section id="o-que-sao" class="py-20 sm:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-10 items-center">
+        <div class="lg:col-span-3 reveal">
+          <h2 class="section-title">O que são <span class="text-neon">Ataques Cibernéticos</span>?</h2>
+          <p class="mt-5 text-slate-300 leading-relaxed">
+            Um ataque cibernético é qualquer tentativa de acessar, roubar, alterar ou bloquear sistemas, dados e dispositivos sem autorização. O alvo pode ser o seu celular, a rede de uma empresa ou a infraestrutura de uma cidade inteira.
+          </p>
+          <p class="mt-4 text-slate-300 leading-relaxed">
+            Na maioria das vezes, o criminoso não “quebra” a tecnologia: ele engana uma pessoa. Uma mensagem urgente, um link disfarçado ou um programa baixado de fonte duvidosa já bastam para abrir a porta.
+          </p>
+          <ul class="mt-6 grid sm:grid-cols-3 gap-3 text-sm">
+            <li class="glass rounded-xl p-4"><i class="fa-solid fa-lock-open text-neon mr-2" aria-hidden="true"></i>Acesso indevido</li>
+            <li class="glass rounded-xl p-4"><i class="fa-solid fa-database text-cyan-cyber mr-2" aria-hidden="true"></i>Roubo de dados</li>
+            <li class="glass rounded-xl p-4"><i class="fa-solid fa-ban text-neon mr-2" aria-hidden="true"></i>Bloqueio de sistemas</li>
+          </ul>
+        </div>
+        <figure class="lg:col-span-2 reveal">
+          <svg viewBox="0 0 800 600" role="img" aria-labelledby="def-svg-title" class="rounded-2xl border border-white/10 w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+            <title id="def-svg-title">Ilustração de um ladrão digital tentando acessar um computador, bloqueado por um cadeado</title>
+            <defs>
+              <linearGradient id="dg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22c55e"/><stop offset="1" stop-color="#06b6d4"/></linearGradient>
+              <pattern id="dgrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#06b6d4" stroke-opacity=".08"/></pattern>
+            </defs>
+            <rect width="800" height="600" fill="#0b1224"/>
+            <rect width="800" height="600" fill="url(#dgrid)"/>
+
+            <!-- monitor -->
+            <rect x="230" y="150" width="340" height="230" rx="18" fill="#111c36" stroke="#2a3b66" stroke-width="3"/>
+            <rect x="250" y="170" width="300" height="190" rx="8" fill="#0b1224"/>
+            <rect x="370" y="380" width="60" height="40" fill="#1e2d52"/>
+            <rect x="320" y="420" width="160" height="14" rx="7" fill="#1e2d52"/>
+
+            <!-- cadeado na tela -->
+            <rect x="360" y="235" width="80" height="66" rx="12" fill="url(#dg)"/>
+            <path d="M377 235v-20a23 23 0 0 1 46 0v20" fill="none" stroke="url(#dg)" stroke-width="11" stroke-linecap="round"/>
+            <circle cx="400" cy="262" r="8" fill="#0b1224"/><rect x="397" y="266" width="6" height="18" rx="3" fill="#0b1224"/>
+            <g fill="#22c55e" fill-opacity=".6"><rect x="270" y="192" width="70" height="8" rx="4"/><rect x="270" y="212" width="46" height="8" rx="4"/><rect x="460" y="192" width="70" height="8" rx="4"/><rect x="484" y="212" width="46" height="8" rx="4"/></g>
+
+            <!-- hacker -->
+            <g transform="translate(110 360)">
+              <path d="M-70 200c0-70 35-110 70-110s70 40 70 110z" fill="#1e2d52" stroke="#2a3b66" stroke-width="3"/>
+              <circle cx="0" cy="50" r="46" fill="#111c36" stroke="#2a3b66" stroke-width="3"/>
+              <path d="M-46 40a46 46 0 0 1 92 0v10h-92z" fill="#0b1224"/>
+              <rect x="-34" y="42" width="68" height="22" rx="11" fill="#06b6d4" fill-opacity=".25"/>
+              <circle cx="-14" cy="53" r="5" fill="#ef4444"/><circle cx="14" cy="53" r="5" fill="#ef4444"/>
+            </g>
+            <path d="M175 440C215 440 215 400 245 392" stroke="#ef4444" stroke-width="4" stroke-dasharray="8 8" fill="none" stroke-linecap="round"/>
+            <circle cx="248" cy="391" r="10" fill="#ef4444"/>
+            <path d="M243 386l10 10M253 386l-10 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- alerta -->
+            <g transform="translate(640 120)">
+              <rect x="-80" y="-30" width="160" height="60" rx="30" fill="#111c36" stroke="#22c55e" stroke-width="2"/>
+              <path d="M-52-6l10 10 20-20" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="-4" y="6" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="700" fill="#fff">Acesso negado</text>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ COMO ACONTECEM ============ -->
+    <section id="como-funcionam" class="py-20 sm:py-24 bg-white/[0.02]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <h2 class="section-title">Como os ataques são aplicados <span class="text-neon">na prática</span></h2>
+          <p class="mt-4 text-slate-300">Quase todo ataque segue um caminho parecido, em três fases.</p>
+        </div>
+
+        <ol class="timeline mt-14 grid gap-8 md:grid-cols-3">
+          <li class="glass rounded-2xl p-6 reveal relative">
+            <span class="step-num">1</span>
+            <h3 class="text-xl font-bold text-white mt-4">Infiltração</h3>
+            <p class="text-xs uppercase tracking-wider text-cyan-cyber mt-1">Engenharia social e phishing</p>
+            <p class="mt-3 text-slate-300 text-sm leading-relaxed">
+              O atacante se passa por banco, chefe, parente ou órgão público para fazer a vítima clicar, responder ou entregar uma senha. É a porta de entrada mais comum.
+            </p>
+          </li>
+          <li class="glass rounded-2xl p-6 reveal relative">
+            <span class="step-num">2</span>
+            <h3 class="text-xl font-bold text-white mt-4">Exploração</h3>
+            <p class="text-xs uppercase tracking-wider text-cyan-cyber mt-1">Vulnerabilidades técnicas</p>
+            <p class="mt-3 text-slate-300 text-sm leading-relaxed">
+              Com o primeiro acesso, ele procura falhas: sistemas sem atualização, senhas fracas, equipamentos expostos na internet ou programas piratas com código malicioso.
+            </p>
+          </li>
+          <li class="glass rounded-2xl p-6 reveal relative">
+            <span class="step-num">3</span>
+            <h3 class="text-xl font-bold text-white mt-4">Movimentação e impacto</h3>
+            <p class="text-xs uppercase tracking-wider text-cyan-cyber mt-1">Movimentação lateral</p>
+            <p class="mt-3 text-slate-300 text-sm leading-relaxed">
+              O criminoso se espalha pela rede, ganha mais privilégios e então age: rouba dados, desvia dinheiro, derruba serviços ou criptografa tudo e pede resgate.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ TIPOS DE AMEAÇAS ============ -->
+    <section id="ameacas" class="py-20 sm:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <h2 class="section-title">Tipos comuns de <span class="text-neon">ameaças</span></h2>
+          <p class="mt-4 text-slate-300">Conhecer o inimigo é o primeiro passo para não cair.</p>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article class="glass card-hover rounded-2xl p-6 reveal">
+            <div class="icon-box"><i class="fa-solid fa-fish" aria-hidden="true"></i></div>
+            <h3 class="mt-5 text-lg font-bold text-white">Phishing</h3>
+            <p class="mt-2 text-sm text-slate-300">Mensagens, e-mails e sites falsos que imitam empresas reais para roubar senhas, dados de cartão e acessos.</p>
+          </article>
+          <article class="glass card-hover rounded-2xl p-6 reveal">
+            <div class="icon-box"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+            <h3 class="mt-5 text-lg font-bold text-white">Ransomware</h3>
+            <p class="mt-2 text-sm text-slate-300">Programa que criptografa seus arquivos e exige pagamento para liberar. Backups fora da rede são a melhor defesa.</p>
+          </article>
+          <article class="glass card-hover rounded-2xl p-6 reveal">
+            <div class="icon-box"><i class="fa-solid fa-user-secret" aria-hidden="true"></i></div>
+            <h3 class="mt-5 text-lg font-bold text-white">Engenharia Social</h3>
+            <p class="mt-2 text-sm text-slate-300">Manipulação psicológica: urgência, medo ou promessa de ganho para levar a vítima a agir sem pensar.</p>
+          </article>
+          <article class="glass card-hover rounded-2xl p-6 reveal">
+            <div class="icon-box"><i class="fa-solid fa-bug" aria-hidden="true"></i></div>
+            <h3 class="mt-5 text-lg font-bold text-white">Malware</h3>
+            <p class="mt-2 text-sm text-slate-300">Vírus, trojans e spywares que se instalam no aparelho para espionar, roubar dados ou dar controle ao criminoso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CASOS REAIS ============ -->
+    <section id="casos" class="py-20 sm:py-24 bg-white/[0.02]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <h2 class="section-title">Isso <span class="text-neon">não é filme</span>: casos reais</h2>
+          <p class="mt-4 text-slate-300">Ataques que aconteceram de verdade e mostram o que está em jogo. Os relatos abaixo se baseiam em reportagens públicas, e algumas investigações ainda estão em andamento.</p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <article class="glass card-hover rounded-2xl p-6 flex flex-col reveal overflow-hidden">
+            <svg class="case-art" viewBox="0 0 600 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Guindaste e contêineres em um porto, com um alerta de ataque digital" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="220" fill="#0e1a33"/>
+              <circle cx="470" cy="70" r="120" fill="#06b6d4" fill-opacity=".12"/>
+              <rect y="165" width="600" height="55" fill="#0a2e4a"/>
+              <path d="M0 180q25-8 50 0t50 0 50 0 50 0 50 0 50 0 50 0 50 0 50 0 50 0 50 0 50 0" fill="none" stroke="#06b6d4" stroke-opacity=".5" stroke-width="3"/>
+              <rect x="0" y="150" width="240" height="20" fill="#1e2d52"/>
+              <g fill="#334a7d"><rect x="60" y="50" width="10" height="100"/><rect x="150" y="50" width="10" height="100"/><rect x="40" y="40" width="430" height="12"/></g>
+              <path d="M60 52L110 18L160 52" fill="none" stroke="#334a7d" stroke-width="6" stroke-linejoin="round"/>
+              <line x1="440" y1="52" x2="440" y2="92" stroke="#94a3b8" stroke-width="3"/>
+              <rect x="418" y="92" width="44" height="26" fill="#22c55e"/>
+              <path d="M250 165h300l-26 30H280z" fill="#1e2d52" stroke="#334a7d" stroke-width="2"/>
+              <rect x="270" y="135" width="44" height="30" fill="#eab308" fill-opacity=".85"/>
+              <rect x="314" y="135" width="44" height="30" fill="#06b6d4" fill-opacity=".85"/>
+              <rect x="358" y="135" width="44" height="30" fill="#22c55e" fill-opacity=".85"/>
+              <rect x="292" y="105" width="44" height="30" fill="#ef4444" fill-opacity=".85"/>
+              <rect x="336" y="105" width="44" height="30" fill="#eab308" fill-opacity=".85"/>
+              <g transform="translate(530 60)"><circle r="30" fill="#3f1d1d" stroke="#ef4444" stroke-width="3"/><rect x="-12" y="-4" width="24" height="18" rx="3" fill="#fff"/><path d="M-7-4v-6a7 7 0 0 1 14 0v6" fill="none" stroke="#fff" stroke-width="3.5"/></g>
+            </svg>
+            <div class="flex items-center justify-between">
+              <span class="tag"><i class="fa-solid fa-ship mr-1.5" aria-hidden="true"></i>Infraestrutura crítica</span>
+              <span class="text-xs text-slate-400">Brasil</span>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-white">Ataque ao Porto de Santos</h3>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+              A operadora de terminais Santos Brasil, no maior porto da América Latina, apareceu em listas de vítimas divulgadas pelo grupo de ransomware N0n, segundo monitoramento de ameaças. Em portos, o risco é paralisar cargas e operações; o impacto exato deve ser confirmado em fontes oficiais.
+            </p>
+            <a class="source-link mt-auto pt-4" href="https://ciberlatam.com/en/news/santos-brasil-appears-n0n-leak" target="_blank" rel="noopener noreferrer">Fonte: CiberLATAM <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="glass card-hover rounded-2xl p-6 flex flex-col reveal overflow-hidden">
+            <svg class="case-art" viewBox="0 0 600 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Prédio público com moedas sendo desviadas para fora" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="220" fill="#0e1a33"/>
+              <circle cx="190" cy="90" r="120" fill="#22c55e" fill-opacity=".1"/>
+              <path d="M90 92L210 38L330 92Z" fill="#1e2d52" stroke="#334a7d" stroke-width="3" stroke-linejoin="round"/>
+              <g fill="#334a7d"><rect x="112" y="102" width="20" height="58"/><rect x="152" y="102" width="20" height="58"/><rect x="192" y="102" width="20" height="58"/><rect x="232" y="102" width="20" height="58"/><rect x="272" y="102" width="20" height="58"/></g>
+              <rect x="92" y="160" width="236" height="14" fill="#334a7d"/>
+              <rect x="78" y="174" width="264" height="12" fill="#2a3b66"/>
+              <path d="M330 130C380 130 390 100 430 90" fill="none" stroke="#ef4444" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/>
+              <g font-family="Inter,Arial,sans-serif" font-size="14" font-weight="800" text-anchor="middle" fill="#0e1a33">
+                <circle cx="440" cy="85" r="22" fill="#eab308"/><text x="440" y="90">R$</text>
+                <circle cx="495" cy="130" r="22" fill="#eab308"/><text x="495" y="135">R$</text>
+                <circle cx="530" cy="60" r="22" fill="#eab308"/><text x="530" y="65">R$</text>
+                <circle cx="560" cy="165" r="16" fill="#eab308" fill-opacity=".7"/>
+              </g>
+            </svg>
+            <div class="flex items-center justify-between">
+              <span class="tag"><i class="fa-solid fa-building-columns mr-1.5" aria-hidden="true"></i>Credenciais bancárias</span>
+              <span class="text-xs text-slate-400">Brasil</span>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-white">Desvio de recursos públicos em Minas Gerais</h3>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+              A partir de agosto de 2025, criminosos desviaram mais de R$ 17 milhões de contas de pequenos municípios mineiros explorando fragilidades em sistemas bancários. Em julho de 2026, acordos com a Caixa previram a devolução dos valores com correção pela Selic.
+            </p>
+            <a class="source-link mt-auto pt-4" href="https://ofator.com.br/opiniao/como-foi-a-construcao-do-acordo-que-devolvera-r-17-milhoes-desviados-a-municipios-de-mg/" target="_blank" rel="noopener noreferrer">Fonte: O Fator <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="glass card-hover rounded-2xl p-6 flex flex-col reveal overflow-hidden">
+            <svg class="case-art" viewBox="0 0 600 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Servidor com documentos vazando e um distintivo policial" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="220" fill="#0e1a33"/>
+              <circle cx="170" cy="100" r="120" fill="#3b82f6" fill-opacity=".12"/>
+              <g fill="#1e2d52" stroke="#334a7d" stroke-width="2"><rect x="80" y="45" width="170" height="38" rx="6"/><rect x="80" y="91" width="170" height="38" rx="6"/><rect x="80" y="137" width="170" height="38" rx="6"/></g>
+              <g><circle cx="102" cy="64" r="5" fill="#22c55e"/><circle cx="102" cy="110" r="5" fill="#ef4444"/><circle cx="102" cy="156" r="5" fill="#22c55e"/></g>
+              <g fill="#334a7d"><rect x="125" y="60" width="90" height="8" rx="4"/><rect x="125" y="106" width="90" height="8" rx="4"/><rect x="125" y="152" width="90" height="8" rx="4"/></g>
+              <path d="M250 110C290 110 300 90 340 85" fill="none" stroke="#ef4444" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/>
+              <g fill="#f1f5f9" fill-opacity=".92">
+                <g transform="translate(330 50) rotate(-8)"><rect width="60" height="76" rx="6"/><rect x="10" y="14" width="40" height="6" rx="3" fill="#94a3b8"/><rect x="10" y="30" width="40" height="6" rx="3" fill="#94a3b8"/><rect x="10" y="46" width="26" height="6" rx="3" fill="#94a3b8"/></g>
+                <g transform="translate(415 90) rotate(7)"><rect width="60" height="76" rx="6"/><rect x="10" y="14" width="40" height="6" rx="3" fill="#94a3b8"/><rect x="10" y="30" width="40" height="6" rx="3" fill="#94a3b8"/><rect x="10" y="46" width="26" height="6" rx="3" fill="#94a3b8"/></g>
+              </g>
+              <g transform="translate(540 70)"><path d="M0-34L28-22V6C28 24 14 36 0 42-14 36-28 24-28 6V-22Z" fill="#1d4ed8" stroke="#93c5fd" stroke-width="3"/><polygon points="0,-16 5,-5 17,-5 7,3 11,15 0,8 -11,15 -7,3 -17,-5 -5,-5" fill="#eab308"/></g>
+            </svg>
+            <div class="flex items-center justify-between">
+              <span class="tag"><i class="fa-solid fa-file-shield mr-1.5" aria-hidden="true"></i>Vazamento de dados</span>
+              <span class="text-xs text-slate-400">Brasil</span>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-white">Invasão a sistemas públicos de SP (Operação Intruder)</h3>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+              Em maio de 2026, a Corregedoria da Polícia Civil e a CGE-SP investigaram a invasão de sistemas de órgãos estaduais. Segundo a polícia, o suspeito usava malware e acessos ilícitos para extrair dados institucionais e tentou negociá-los em fóruns clandestinos.
+            </p>
+            <a class="source-link mt-auto pt-4" href="https://www.correiodamanha.com.br/nacional/sao-paulo/estado-de-sao-paulo/2026/05/283929-operacao-intruder-investiga-invasao-a-sistemas-publicos.html" target="_blank" rel="noopener noreferrer">Fonte: Correio da Manhã <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="glass card-hover rounded-2xl p-6 flex flex-col reveal overflow-hidden lg:col-start-1 lg:col-end-2">
+            <svg class="case-art" viewBox="0 0 600 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Geladeira de supermercado com termômetro marcando 50 graus e sinal de acesso remoto" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="220" fill="#0e1a33"/>
+              <circle cx="130" cy="100" r="110" fill="#06b6d4" fill-opacity=".12"/>
+              <rect x="70" y="26" width="120" height="164" rx="10" fill="#1e2d52" stroke="#94a3b8" stroke-width="3"/>
+              <rect x="82" y="40" width="96" height="136" rx="6" fill="#06b6d4" fill-opacity=".18"/>
+              <g stroke="#94a3b8" stroke-opacity=".6" stroke-width="2"><line x1="82" y1="85" x2="178" y2="85"/><line x1="82" y1="130" x2="178" y2="130"/></g>
+              <g><rect x="92" y="62" width="20" height="23" fill="#22c55e"/><rect x="118" y="66" width="20" height="19" fill="#eab308"/><rect x="144" y="60" width="22" height="25" fill="#ef4444"/><rect x="92" y="107" width="26" height="23" fill="#06b6d4"/><rect x="126" y="110" width="40" height="20" fill="#eab308"/><rect x="92" y="152" width="30" height="24" fill="#22c55e"/><rect x="132" y="150" width="34" height="26" fill="#06b6d4"/></g>
+              <rect x="268" y="34" width="22" height="120" rx="11" fill="#0b1224" stroke="#94a3b8" stroke-width="3"/>
+              <rect x="274" y="62" width="10" height="100" rx="5" fill="#ef4444"/>
+              <circle cx="279" cy="168" r="24" fill="#ef4444" stroke="#0e1a33" stroke-width="4"/>
+              <text x="320" y="130" font-family="Inter,Arial,sans-serif" font-size="56" font-weight="800" fill="#ef4444">50°C</text>
+              <g transform="translate(470 56)" fill="none" stroke="#ef4444" stroke-width="5" stroke-linecap="round"><path d="M-40-4a56 56 0 0 1 80 0"/><path d="M-26 12a36 36 0 0 1 52 0"/><path d="M-12 28a16 16 0 0 1 24 0"/><circle cx="0" cy="42" r="3" fill="#ef4444"/></g>
+            </svg>
+            <div class="flex items-center justify-between">
+              <span class="tag"><i class="fa-solid fa-snowflake mr-1.5" aria-hidden="true"></i>Ataque físico via IoT</span>
+              <span class="text-xs text-slate-400">França</span>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-white">Ataque à cadeia de frio na Europa</h3>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+              Na noite de 11 para 12 de outubro de 2026, atacantes teriam acessado remotamente controladores de refrigeração de supermercados franceses, forçando degelos e elevando temperaturas a até 50 °C. Lojas descartaram muitos alimentos, com perdas iniciais estimadas em milhões de euros.
+            </p>
+            <a class="source-link mt-auto pt-4" href="https://www.pandasecurity.com/en/mediacenter/french-supermarket-cyberattack-refrigeration-systems/" target="_blank" rel="noopener noreferrer">Fonte: Panda Security <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="glass card-hover rounded-2xl p-6 flex flex-col reveal overflow-hidden md:col-span-1 lg:col-span-2">
+            <svg class="case-art" viewBox="0 0 600 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Instalador pirata com caveira, seguido de uma pasta trancada por ransomware" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="220" fill="#0e1a33"/>
+              <circle cx="190" cy="100" r="120" fill="#ef4444" fill-opacity=".1"/>
+              <rect x="60" y="34" width="250" height="150" rx="12" fill="#111c36" stroke="#334a7d" stroke-width="2"/>
+              <path d="M60 46a12 12 0 0 1 12-12h226a12 12 0 0 1 12 12v14H60z" fill="#1e2d52"/>
+              <circle cx="78" cy="47" r="4" fill="#ef4444"/><circle cx="92" cy="47" r="4" fill="#eab308"/><circle cx="106" cy="47" r="4" fill="#22c55e"/>
+              <text x="122" y="51" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#94a3b8">setup_crack.exe</text>
+              <g transform="translate(185 112)">
+                <circle r="30" fill="#f1f5f9"/><rect x="-16" y="20" width="32" height="18" rx="4" fill="#f1f5f9"/>
+                <circle cx="-11" cy="-2" r="8" fill="#0e1a33"/><circle cx="11" cy="-2" r="8" fill="#0e1a33"/>
+                <path d="M-3 12h6l-3-8z" fill="#0e1a33"/>
+                <path d="M-8 26v10M0 26v10M8 26v10" stroke="#0e1a33" stroke-width="2"/>
+              </g>
+              <path d="M325 110H395" stroke="#ef4444" stroke-width="4" stroke-dasharray="8 8" stroke-linecap="round"/>
+              <path d="M392 100l16 10-16 10z" fill="#ef4444"/>
+              <path d="M425 80h42l10 12h78v68H425z" fill="#eab308" fill-opacity=".85"/>
+              <g transform="translate(500 132)"><circle r="30" fill="#3f1d1d" stroke="#ef4444" stroke-width="3"/><rect x="-13" y="-3" width="26" height="19" rx="3" fill="#fff"/><path d="M-8-3v-7a8 8 0 0 1 16 0v7" fill="none" stroke="#fff" stroke-width="4"/></g>
+              <text x="496" y="188" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" fill="#ef4444" letter-spacing="2">RESGATE</text>
+            </svg>
+            <div class="flex items-center justify-between">
+              <span class="tag"><i class="fa-solid fa-compact-disc mr-1.5" aria-hidden="true"></i>Ransomware via software ilegal</span>
+              <span class="text-xs text-slate-400">Costa do Marfim</span>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-white">O caso do software pirata</h3>
+            <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+              Programas “crackeados” costumam trazer código malicioso, e o ransomware é um dos resultados mais comuns dessa instalação. Ao rodar o instalador pirata, a vítima abre a porta para a criptografia dos arquivos e o pedido de resgate. Este card é um exemplo ilustrativo do mecanismo: ainda não há fonte pública confirmada para um caso específico na Costa do Marfim.
+            </p>
+            <span class="mt-auto pt-4 text-xs text-slate-400"><i class="fa-solid fa-circle-info mr-1" aria-hidden="true"></i>Exemplo ilustrativo, a confirmar com fonte oficial.</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHECKLIST ============ -->
+    <section id="protecao" class="py-20 sm:py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center reveal">
+          <h2 class="section-title">Como <span class="text-neon">se proteger</span></h2>
+          <p class="mt-4 text-slate-300">Toque em cada item que você já pratica. Seu progresso fica salvo neste navegador.</p>
+        </div>
+
+        <div class="mt-8 reveal" aria-live="polite">
+          <div class="flex justify-between text-sm font-medium mb-2">
+            <span id="progress-label">0 de 8 hábitos aplicados</span>
+            <span id="progress-pct" class="text-neon">0%</span>
+          </div>
+          <div class="h-3 rounded-full bg-white/10 overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track" aria-label="Progresso do checklist">
+            <div id="progress-bar" class="h-full w-0 bg-gradient-to-r from-neon to-cyan-cyber transition-all duration-500"></div>
+          </div>
+        </div>
+
+        <ul id="checklist" class="mt-8 space-y-3">
+          <li><button type="button" class="check-item" aria-pressed="false" data-id="senhas"><span class="check-box"><i class="fa-solid fa-check" aria-hidden="true"></i></span><span><strong>Use senhas fortes e únicas</strong><small>Longas, diferentes em cada serviço, guardadas em um gerenciador de senhas.</small></span></button></li>
+          <li><button type="button" class="check-item" aria-pressed="false" data-id="2fa"><span class="check-box"><i class="fa-solid fa-check" aria-hidden="true"></i></span><span><strong>Ative a autenticação de 2 fatores</strong><small>De preferência por aplicativo autenticador, nunca compartilhe o código.</small></span></button></li>
+          <li><button type="button" class="check-item" aria-pressed="false" data-id="updates"><span class="check-box"><i class="fa-solid fa-check" aria-hidden="true"></i></span><span><strong>Mantenha tudo atualizado</strong><small>Sistema, navegador, aplicativos e roteador. Atualizações corrigem falhas exploradas por criminosos.</small></span></button></li>
+          <li><button type="button" class="check-item" aria-pressed="false" data-id="pirata"><span class="check-box"><i class="fa-solid fa-check" aria-hidden="true"></i></span><span><strong>Fuja de softwares piratas</strong><small>Programas “crackeados” são uma porta de entrada comum para malware e ransomware.</small></span></button></li>
+          <li><button type="button" class="check-item" aria-pressed="false" data-id="links"><span class="check-box"><i class="fa-solid fa-check" aria-hidden="true"></i></span><span><strong>Desconfie de links e anexos</strong><small>Urgência, ameaça ou prêmio fácil são sinais de golpe. Acesse o site digitando o endereço.</small></span></button></li>
+          <li><button type="button" class="check-item" aria-pressed="false" data-id="backup"><span class="check-box"><i class="fa-solid fa-check" aria-hidden="true"></i></span><span><strong>Faça backups regulares</strong><small>Mantenha uma cópia fora do computador ou da rede para se recuperar de um ransomware.</small></span></button></li>
+          <li><button type="button" class="check-item" aria-pressed="false" data-id="confirmar"><span class="check-box"><i class="fa-solid fa-check" aria-hidden="true"></i></span><span><strong>Confirme pedidos de dinheiro por outro canal</strong><small>Ligue para a pessoa no número que você já tem antes de transferir qualquer valor.</small></span></button></li>
+          <li><button type="button" class="check-item" aria-pressed="false" data-id="wifi"><span class="check-box"><i class="fa-solid fa-check" aria-hidden="true"></i></span><span><strong>Cuide das redes e dos dispositivos conectados</strong><small>Troque a senha padrão do roteador e de câmeras e aparelhos IoT, e evite Wi-Fi público para operações sensíveis.</small></span></button></li>
+        </ul>
+
+        <p id="checklist-done" class="hidden mt-6 text-center glass rounded-xl p-4 text-neon font-semibold">
+          <i class="fa-solid fa-trophy mr-2" aria-hidden="true"></i>Parabéns! Você aplica todos os hábitos essenciais.
+        </p>
+        <div class="mt-4 text-center">
+          <button type="button" id="checklist-reset" class="text-sm text-slate-400 hover:text-white underline underline-offset-4">Limpar checklist</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DENÚNCIA ============ -->
+    <section id="denuncia" class="py-20 sm:py-24 bg-white/[0.02]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <h2 class="section-title">Canais de <span class="text-neon">denúncia</span></h2>
+          <p class="mt-4 text-slate-300">Foi vítima ou viu um golpe? Guarde prints, links e comprovantes e procure ajuda.</p>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a class="glass card-hover rounded-2xl p-6 block reveal" href="https://www.cert.br/" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><i class="fa-solid fa-satellite-dish" aria-hidden="true"></i></div>
+            <h3 class="mt-4 font-bold text-white">CERT.br</h3>
+            <p class="mt-2 text-sm text-slate-300">Centro de estudos e tratamento de incidentes de segurança no Brasil. Notifique incidentes e consulte cartilhas.</p>
+          </a>
+          <a class="glass card-hover rounded-2xl p-6 block reveal" href="https://www.delegaciaeletronica.policiacivil.sp.gov.br/" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><i class="fa-solid fa-building-shield" aria-hidden="true"></i></div>
+            <h3 class="mt-4 font-bold text-white">Polícia Civil (Delegacia Eletrônica)</h3>
+            <p class="mt-2 text-sm text-slate-300">Registre o Boletim de Ocorrência online. Cada estado tem seu canal; procure o da sua região.</p>
+          </a>
+          <a class="glass card-hover rounded-2xl p-6 block reveal" href="https://www.gov.br/pf/pt-br" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><i class="fa-solid fa-user-shield" aria-hidden="true"></i></div>
+            <h3 class="mt-4 font-bold text-white">Polícia Federal</h3>
+            <p class="mt-2 text-sm text-slate-300">Atua em crimes cibernéticos de alcance federal, como fraudes contra órgãos públicos.</p>
+          </a>
+          <a class="glass card-hover rounded-2xl p-6 block reveal" href="https://new.safernet.org.br/denuncie" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><i class="fa-solid fa-flag" aria-hidden="true"></i></div>
+            <h3 class="mt-4 font-bold text-white">SaferNet Brasil</h3>
+            <p class="mt-2 text-sm text-slate-300">Canal para denunciar crimes e violações de direitos humanos na internet.</p>
+          </a>
+          <a class="glass card-hover rounded-2xl p-6 block reveal" href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer">
+            <div class="icon-box"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+            <h3 class="mt-4 font-bold text-white">ANPD</h3>
+            <p class="mt-2 text-sm text-slate-300">Autoridade de proteção de dados. Útil em casos de vazamento de dados pessoais.</p>
+          </a>
+          <div class="glass rounded-2xl p-6 reveal border-neon/30">
+            <div class="icon-box"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></div>
+            <h3 class="mt-4 font-bold text-white">Foi vítima de golpe financeiro?</h3>
+            <p class="mt-2 text-sm text-slate-300">Ligue imediatamente para o seu banco pelo telefone oficial do cartão e peça o bloqueio de contas e cartões.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="border-t border-white/10 bg-black/20" aria-label="Rodapé">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Coluna 1: marca -->
+      <div>
+        <a href="#inicio" class="flex items-center gap-2 font-extrabold text-white text-xl">
+          <i class="fa-solid fa-shield-halved text-neon" aria-hidden="true"></i>
+          Cyber<span class="text-neon">Seguro</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+          Informação clara e gratuita sobre ataques cibernéticos, para você proteger sua família, seu dinheiro e seus dados.
+        </p>
+        <p class="mt-4 text-sm text-slate-500">&copy; <span id="ano">2026</span> CyberSeguro. Todos os direitos reservados.</p>
+      </div>
+
+      <!-- Coluna 2: navegação rápida -->
+      <nav aria-label="Navegação rápida">
+        <h2 class="footer-title">Navegação rápida</h2>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li><a class="footer-link" href="#inicio">Início</a></li>
+          <li><a class="footer-link" href="#casos">Casos Reais</a></li>
+          <li><a class="footer-link" href="#protecao">Como se Proteger</a></li>
+          <li><a class="footer-link" href="#ameacas">Tipos de Ameaças</a></li>
+        </ul>
+      </nav>
+
+      <!-- Coluna 3: denúncia e redes -->
+      <div>
+        <h2 class="footer-title">Canais de denúncia</h2>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li><a class="footer-link" href="https://www.cert.br/" target="_blank" rel="noopener noreferrer">CERT.br <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a></li>
+          <li><a class="footer-link" href="https://www.delegaciaeletronica.policiacivil.sp.gov.br/" target="_blank" rel="noopener noreferrer">Polícia Civil <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a></li>
+          <li><a class="footer-link" href="https://new.safernet.org.br/denuncie" target="_blank" rel="noopener noreferrer">SaferNet <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a></li>
+        </ul>
+
+        <h2 class="footer-title mt-8">Compartilhe este alerta</h2>
+        <ul class="mt-4 flex gap-3">
+          <li><a class="social-btn" data-share="whatsapp" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
+          <li><a class="social-btn" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+          <li><a class="social-btn" data-share="x" href="https://twitter.com/intent/tweet" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+          <li><a class="social-btn" data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar no LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: contato e créditos -->
+      <div>
+        <h2 class="footer-title">Contato</h2>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li>
+            <a class="footer-link inline-flex items-start gap-2 break-all" href="mailto:carloseduardo01389@gmail.com">
+              <i class="fa-solid fa-envelope text-neon mt-1" aria-hidden="true"></i>
+              carloseduardo01389@gmail.com
+            </a>
+          </li>
+        </ul>
+        <p class="mt-8 text-sm text-slate-400 flex items-start gap-2">
+          <i class="fa-solid fa-code text-cyan-cyber mt-1" aria-hidden="true"></i>
+          <span>Desenvolvido por <strong class="text-white">Carlos Eduardo</strong> - 04/DS4P4</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <p>Conteúdo educativo sobre segurança digital.</p>
+        <ul class="flex items-center gap-5">
+          <li><a class="footer-link" href="politica-de-privacidade.html">Política de Privacidade</a></li>
+          <li><a class="footer-link" href="termos-de-uso.html">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-top" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
