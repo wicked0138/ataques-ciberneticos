@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# TROQUE pela URL final do seu site
-Sitemap: https://SEU-USUARIO.github.io/ataques-ciberneticos/sitemap.xml
